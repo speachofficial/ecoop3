@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "470924345641",
+    "project_id": "e-coop3",
+    "storage_bucket": "e-coop3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470924345641:android:40a57395fa91ae1464f738",
+        "android_client_info": {
+          "package_name": "com.example.ecoop3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470924345641-su63bonon1qbtc50vdnp6n17a9u37ev7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMbLwlEAfB6oDSXmJeJ9_sgUTm5oDXD3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470924345641-su63bonon1qbtc50vdnp6n17a9u37ev7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

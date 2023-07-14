@@ -1,0 +1,43 @@
+import 'package:flutter/material.dart';
+
+class AppColors {
+  static const Color cA8E6CF_100 = Color.fromARGB(255, 168, 230, 207);
+  static const Color cB3D3FF_100 = Color.fromARGB(255, 179, 211, 255);
+  static const Color cCCD9FF_100 = Color.fromARGB(255, 204, 217, 255);
+  static const Color cC8151D_100 = Color.fromARGB(255, 200, 21, 30);
+  static const Color cC8151D_25 = Color.fromARGB(64, 200, 21, 30);
+  static const Color cC8151D_20 = Color.fromARGB(51, 200, 21, 30);
+  static const Color cD9D9D9_100 = Color.fromARGB(255, 217, 217, 217);
+  static const Color cDCC465_100 = Color.fromARGB(255, 220, 196, 101);
+  static const Color cDCEDC1_100 = Color.fromARGB(255, 220, 237, 193);
+  static const Color cEA2127_100 = Color.fromARGB(255, 234, 33, 40);
+  static const Color cE9E9E9_70 = Color.fromARGB(255, 233, 233, 233);
+  static const Color cF2F2F2_100 = Color.fromARGB(255, 242, 242, 242);
+  static const Color cFFC700_100 = Color.fromARGB(255, 255, 200, 0);
+  static const Color cFFFFFF_100 = Color.fromARGB(255, 255, 255, 255);
+  static const Color cFFFFFF_90 = Color.fromARGB(230, 255, 255, 255);
+  static const Color cFFFFFF_50 = Color.fromARGB(128, 255, 255, 255);
+  static const Color cFF856F_100 = Color.fromARGB(255, 255, 133, 111);
+  static const Color c4DDBBE_100 = Color.fromARGB(255, 77, 219, 191);
+  static const Color c97E4EE_100 = Color.fromARGB(255, 151, 228, 238);
+  static const Color c3B8CF4_100 = Color.fromARGB(255, 59, 139, 244);
+  static const Color c333333_100 = Color.fromARGB(255, 51, 51, 51);
+  static const Color c333333_75 = Color.fromARGB(192, 51, 51, 51);
+  static const Color c333333_50 = Color.fromARGB(128, 51, 51, 51);
+  static const Color c333333_30 = Color.fromARGB(77, 51, 51, 51);
+  static const Color c333333_25 = Color.fromARGB(63, 51, 51, 51);
+  static const Color c222222_100 = Color.fromARGB(255, 34, 34, 34);
+  static const Color c00DBCE_100 = Color.fromARGB(255, 0, 219, 204);
+  static const Color c0096FF_100 = Color.fromARGB(255, 0, 149, 255);
+  static const Color c0079F0_100 = Color.fromARGB(255, 0, 120, 240);
+  static const Color c003FFF_100 = Color.fromARGB(255, 0, 64, 255);
+  static const Color c003FFF_25 = Color.fromARGB(64, 0, 64, 255);
+  static const Color c003FFF_20 = Color.fromARGB(51, 0, 64, 255);
+  static const Color c000000_100 = Color.fromARGB(255, 0, 0, 0);
+  static const Color c000000_80 = Color.fromARGB(204, 0, 0, 0);
+  static const Color c000000_60 = Color.fromARGB(153, 0, 0, 0);
+  static const Color c000000_50 = Color.fromARGB(128, 0, 0, 0);
+  static const Color c000000_45 = Color.fromARGB(115, 0, 0, 0);
+  static const Color c000000_30 = Color.fromARGB(77, 0, 0, 0);
+  static const Color c000000_25 = Color.fromARGB(64, 0, 0, 0);
+}
