@@ -33,7 +33,6 @@ class MyApp extends StatelessWidget {
   //       },
   //       child: const MaterialApp(home: MainAddYourProductPage()));
   // }
-
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(

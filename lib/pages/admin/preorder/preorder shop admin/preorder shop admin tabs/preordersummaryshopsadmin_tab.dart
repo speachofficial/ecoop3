@@ -1,4 +1,3 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecoop3/widgets/empty.dart';
 import 'package:ecoop3/widgets/loadinghairil.dart';
@@ -113,8 +112,15 @@ class MyShopSummaryContent extends StatelessWidget {
     //     DateTime(tomorrow.year, tomorrow.month, tomorrow.day);
     // DateTime tomorrowEnd = tomorrowStart.add(const Duration(days: 1));
 
-    final orderSnapshot =
-        await FirebaseFirestore.instance.collection('orders').get();
+    final orderSnapshot = await FirebaseFirestore.instance
+        .collection('orders')
+        .where('PickupTime',
+            isGreaterThanOrEqualTo:
+                DateTime.now().add(const Duration(days: 1)).toUtc())
+        .where('PickupTime',
+            isLessThanOrEqualTo:
+                DateTime.now().add(const Duration(days: 2)).toUtc())
+        .get();
     for (final orderDoc in orderSnapshot.docs) {
       final querySnapshot = await FirebaseFirestore.instance
           .collection('orders')
@@ -122,9 +128,6 @@ class MyShopSummaryContent extends StatelessWidget {
           .collection('items')
           .where('item name',
               isEqualTo: productsnapshot.docs[index].get('name'))
-          .where('PickupTime',
-              isGreaterThanOrEqualTo:
-                  Timestamp.fromDate(DateTime.now().add(const Duration(days: 1)).toUtc()))
           .get();
       for (var itemDoc in querySnapshot.docs) {
         totalitemquantity += itemDoc.get('quantity');
