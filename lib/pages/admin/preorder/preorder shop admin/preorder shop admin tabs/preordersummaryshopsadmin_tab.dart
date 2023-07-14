@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../utils/colors.dart';
+import '../../../../../utils/my_package.dart';
 import '../../../../../widgets/smalltext.dart';
 
 class MyShopSummaryContent extends StatelessWidget {
@@ -116,10 +117,10 @@ class MyShopSummaryContent extends StatelessWidget {
         .collection('orders')
         .where('PickupTime',
             isGreaterThanOrEqualTo:
-                DateTime.now().add(const Duration(days: 1)).toUtc())
+                DateTime(now.year, now.month, now.day).add(const Duration(days: 1)).toUtc())
         .where('PickupTime',
             isLessThanOrEqualTo:
-                DateTime.now().add(const Duration(days: 2)).toUtc())
+                DateTime(now.year, now.month, now.day).add(const Duration(days: 2)).toUtc())
         .get();
     for (final orderDoc in orderSnapshot.docs) {
       final querySnapshot = await FirebaseFirestore.instance
