@@ -39,7 +39,7 @@ class _MyShopProductContentState extends State<MyShopProductContent> {
   //   //     .putFile(file);
   //   // if (snapshot.state == TaskState.success) {
   //   //   final String downloadUrl = await snapshot.ref.getDownloadURL();
-  //   //   await FirebaseFirestore.instance
+  //   //   FirebaseFirestore.instance
   //   //       .collection("preorder_products")
   //   //       .doc(productName)
   //   //       .update({

@@ -46,7 +46,7 @@ class _MainAddProductPageContentState extends State<MainAddProductPageContent> {
         .putFile(file);
     if (snapshot.state == TaskState.success) {
       final String downloadUrl = await snapshot.ref.getDownloadURL();
-      await FirebaseFirestore.instance
+      FirebaseFirestore.instance
           .collection("preorder_products")
           .doc(productName)
           .set({
@@ -69,7 +69,7 @@ class _MainAddProductPageContentState extends State<MainAddProductPageContent> {
         .putFile(file);
     if (snapshot.state == TaskState.success) {
       final String downloadUrl = await snapshot.ref.getDownloadURL();
-      await FirebaseFirestore.instance
+      FirebaseFirestore.instance
           .collection("bidding_products")
           .doc(productName)
           .set({
@@ -78,7 +78,6 @@ class _MainAddProductPageContentState extends State<MainAddProductPageContent> {
         "description": productDescription,
         "RM": setPrice,
         'instock': true,
-
       });
       // ignore: use_build_context_synchronously
       Navigator.pop(context);
