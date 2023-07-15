@@ -43,20 +43,19 @@ class _MainAddPromotionNoticeContentState
         .ref()
         .child("promotionnotice/$productName")
         .putFile(file);
-    if (snapshot.state == TaskState.success) {
-      final String downloadUrl = await snapshot.ref.getDownloadURL();
-      FirebaseFirestore.instance
-          .collection("promotion_notice")
-          .doc(productName)
-          .set({
-        "url": downloadUrl,
-        "promotion name": productName,
-        "description": productDescription,
-        "Duration": setPrice,
-      });
-      // ignore: use_build_context_synchronously
-      Navigator.pop(context);
-    } else {}
+
+    final String downloadUrl = await snapshot.ref.getDownloadURL();
+    FirebaseFirestore.instance
+        .collection("promotion_notice")
+        .doc(productName)
+        .set({
+      "url": downloadUrl,
+      "promotion name": productName,
+      "description": productDescription,
+      "Duration": setPrice,
+    });
+    // ignore: use_build_context_synchronously
+    Navigator.pop(context);
   }
 
   void myAlert() {

@@ -44,21 +44,20 @@ class _MainAddProductPageContentState extends State<MainAddProductPageContent> {
         .ref()
         .child("preorder_product_image/$productName")
         .putFile(file);
-    if (snapshot.state == TaskState.success) {
-      final String downloadUrl = await snapshot.ref.getDownloadURL();
-      FirebaseFirestore.instance
-          .collection("preorder_products")
-          .doc(productName)
-          .set({
-        "url": downloadUrl,
-        "name": productName,
-        "description": productDescription,
-        "RM": setPrice,
-        'instock': true
-      });
-      // ignore: use_build_context_synchronously
-      Navigator.pop(context);
-    } else {}
+
+    final String downloadUrl = await snapshot.ref.getDownloadURL();
+    FirebaseFirestore.instance
+        .collection("preorder_products")
+        .doc(productName)
+        .set({
+      "url": downloadUrl,
+      "name": productName,
+      "description": productDescription,
+      "RM": setPrice,
+      'instock': true
+    });
+    // ignore: use_build_context_synchronously
+    Navigator.pop(context);
   }
 
   Future<void> addProductFunctionparent() async {
@@ -67,21 +66,19 @@ class _MainAddProductPageContentState extends State<MainAddProductPageContent> {
         .ref()
         .child("bidding_product_image/$productName")
         .putFile(file);
-    if (snapshot.state == TaskState.success) {
-      final String downloadUrl = await snapshot.ref.getDownloadURL();
-      FirebaseFirestore.instance
-          .collection("bidding_products")
-          .doc(productName)
-          .set({
-        "url": downloadUrl,
-        "name": productName,
-        "description": productDescription,
-        "RM": setPrice,
-        'instock': true,
-      });
-      // ignore: use_build_context_synchronously
-      Navigator.pop(context);
-    } else {}
+    final String downloadUrl = await snapshot.ref.getDownloadURL();
+    FirebaseFirestore.instance
+        .collection("bidding_products")
+        .doc(productName)
+        .set({
+      "url": downloadUrl,
+      "name": productName,
+      "description": productDescription,
+      "RM": setPrice,
+      'instock': true,
+    });
+    // ignore: use_build_context_synchronously
+    Navigator.pop(context);
   }
 
   //show popup dialog
@@ -386,8 +383,9 @@ class _MainAddProductPageContentState extends State<MainAddProductPageContent> {
                     onPressed: () {
                       if (addproductkey.currentState!.validate()) {
                         if (image != null) {
-                          role == 'admin'?
-                          addProductFunctionadmin(): addProductFunctionparent();
+                          role == 'admin'
+                              ? addProductFunctionadmin()
+                              : addProductFunctionparent();
                           done(context);
                         } else {
                           showDialog(

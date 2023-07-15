@@ -27,7 +27,7 @@ class StudentCart extends StatelessWidget {
                       padding: EdgeInsets.all(8.h),
                       child: Dismissible(
                         background: Container(
-                          color: Colors.green,
+                          color: AppColors.cC8151D_100,
                         ),
                         key: Key(snapshot.data!.docs[index].id),
                         onDismissed: (DismissDirection direction) {
