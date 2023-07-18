@@ -21,25 +21,24 @@ class MyShopOrdersContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 32.h),
-              child: SmallText(
-                text:
-                    'Student Orders',
-                size: 48.sp,
-                color: AppColors.c000000_100,
-                fontWeight: FontWeight.bold,
-              ),
-            )),
-        StreamBuilder(
-          stream: getstudentsorder(),
-          builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-            if (snapshot.hasData && snapshot.data!.docs.isNotEmpty) {
-              return ListView.separated(
+    return StreamBuilder(
+      stream: getstudentsorder(),
+      builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (snapshot.hasData && snapshot.data!.docs.isNotEmpty) {
+          return Column(
+            children: [
+              Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: 32.h),
+                    child: SmallText(
+                      text: 'Student Orders',
+                      size: 48.sp,
+                      color: AppColors.c000000_100,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )),
+              ListView.separated(
                 shrinkWrap: true,
                 itemCount: (snapshot.data?.docs.length ?? 0),
                 separatorBuilder: (BuildContext context, int index) {
@@ -65,11 +64,15 @@ class MyShopOrdersContent extends StatelessWidget {
                                       child: SingleChildScrollView(
                                     child: Stack(
                                       children: [
-                                        Image.asset('assets/images/bghomepage.png',
-                                            fit: BoxFit.cover, width: 1620.w),
+                                        Image.asset(
+                                            'assets/images/bghomepage.png',
+                                            fit: BoxFit.cover,
+                                            width: 1620.w),
                                         Padding(
                                           padding: EdgeInsets.only(
-                                              top: 32.h, left: 118.w, right: 118.w),
+                                              top: 32.h,
+                                              left: 118.w,
+                                              right: 118.w),
                                           child: Column(
                                             children: [
                                               Stack(children: [
@@ -81,7 +84,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                           .data!.docs[index]
                                                           .get("OrderNumber"),
                                                       size: 64.sp,
-                                                      color: AppColors.c333333_100,
+                                                      color:
+                                                          AppColors.c333333_100,
                                                     ))
                                               ]),
                                               SizedBox(
@@ -93,14 +97,17 @@ class MyShopOrdersContent extends StatelessWidget {
                                                     vertical: 41.h),
                                                 width: 1320.w,
                                                 decoration: BoxDecoration(
-                                                    color: AppColors.cFFFFFF_100,
+                                                    color:
+                                                        AppColors.cFFFFFF_100,
                                                     borderRadius:
-                                                        BorderRadius.circular(20.r),
+                                                        BorderRadius.circular(
+                                                            20.r),
                                                     boxShadow: const [
                                                       BoxShadow(
-                                                          color:
-                                                              AppColors.c333333_25,
-                                                          offset: Offset(0.0, 4.0),
+                                                          color: AppColors
+                                                              .c333333_25,
+                                                          offset:
+                                                              Offset(0.0, 4.0),
                                                           blurRadius: 25,
                                                           spreadRadius: 2)
                                                     ]),
@@ -111,8 +118,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                         Icon(
                                                           Icons
                                                               .receipt_long_rounded,
-                                                          color:
-                                                              AppColors.cC8151D_100,
+                                                          color: AppColors
+                                                              .cC8151D_100,
                                                           size: 81.sp,
                                                         ),
                                                         SizedBox(
@@ -123,8 +130,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                           size: 64.sp,
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          color:
-                                                              AppColors.c000000_100,
+                                                          color: AppColors
+                                                              .c000000_100,
                                                         )
                                                       ],
                                                     ),
@@ -139,8 +146,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                         title: SmallText(
                                                           text: 'Name',
                                                           size: 40.sp,
-                                                          color:
-                                                              AppColors.c000000_60,
+                                                          color: AppColors
+                                                              .c000000_60,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -149,8 +156,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                               .data!.docs[index]
                                                               .get("Customer"),
                                                           size: 40.sp,
-                                                          color:
-                                                              AppColors.c000000_60,
+                                                          color: AppColors
+                                                              .c000000_60,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -164,8 +171,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                         title: SmallText(
                                                           text: 'Class',
                                                           size: 40.sp,
-                                                          color:
-                                                              AppColors.c000000_60,
+                                                          color: AppColors
+                                                              .c000000_60,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -174,8 +181,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                               .data!.docs[index]
                                                               .get("Class"),
                                                           size: 40.sp,
-                                                          color:
-                                                              AppColors.c000000_60,
+                                                          color: AppColors
+                                                              .c000000_60,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -189,8 +196,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                         title: SmallText(
                                                           text: 'Pick-up time',
                                                           size: 40.sp,
-                                                          color:
-                                                              AppColors.c000000_60,
+                                                          color: AppColors
+                                                              .c000000_60,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -198,12 +205,14 @@ class MyShopOrdersContent extends StatelessWidget {
                                                           text: DateFormat(
                                                                   'HH:mm a')
                                                               .format(snapshot
-                                                                  .data!.docs[index]
-                                                                  .get("PickupTime")
+                                                                  .data!
+                                                                  .docs[index]
+                                                                  .get(
+                                                                      "PickupTime")
                                                                   .toDate()),
                                                           size: 40.sp,
-                                                          color:
-                                                              AppColors.c000000_60,
+                                                          color: AppColors
+                                                              .c000000_60,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -217,8 +226,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                         Icon(
                                                           Icons
                                                               .receipt_long_rounded,
-                                                          color:
-                                                              AppColors.cC8151D_100,
+                                                          color: AppColors
+                                                              .cC8151D_100,
                                                           size: 81.sp,
                                                         ),
                                                         SizedBox(
@@ -229,8 +238,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                           size: 64.sp,
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          color:
-                                                              AppColors.c000000_100,
+                                                          color: AppColors
+                                                              .c000000_100,
                                                         )
                                                       ],
                                                     ),
@@ -240,7 +249,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                           .collection('orders')
                                                           .doc(snapshot
                                                               .data!.docs[index]
-                                                              .get("OrderNumber"))
+                                                              .get(
+                                                                  "OrderNumber"))
                                                           .collection('items')
                                                           .snapshots(),
                                                       builder: (context,
@@ -255,73 +265,77 @@ class MyShopOrdersContent extends StatelessWidget {
                                                         }
                                                         if (snapshot.data!.docs
                                                             .isNotEmpty) {
-                                                          return ListView.builder(
-                                                              shrinkWrap: true,
-                                                              physics:
-                                                                  const NeverScrollableScrollPhysics(),
-                                                              itemCount: snapshot
-                                                                  .data!
-                                                                  .docs
-                                                                  .length,
-                                                              itemBuilder:
-                                                                  (_, index) {
-                                                                return Container(
-                                                                  height: 48.h,
-                                                                  margin: EdgeInsets
-                                                                      .only(
+                                                          return ListView
+                                                              .builder(
+                                                                  shrinkWrap:
+                                                                      true,
+                                                                  physics:
+                                                                      const NeverScrollableScrollPhysics(),
+                                                                  itemCount:
+                                                                      snapshot
+                                                                          .data!
+                                                                          .docs
+                                                                          .length,
+                                                                  itemBuilder:
+                                                                      (_, index) {
+                                                                    return Container(
+                                                                      height:
+                                                                          48.h,
+                                                                      margin: EdgeInsets.only(
                                                                           bottom:
                                                                               10.h),
-                                                                  child: ListTile(
-                                                                    leading:
-                                                                        SmallText(
-                                                                      text:
-                                                                          '${snapshot.data!.docs[index].get("quantity")}x',
-                                                                      size: 40.sp,
-                                                                      color: AppColors
-                                                                          .c000000_60,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
-                                                                    ),
-                                                                    title:
-                                                                        SmallText(
-                                                                      text: snapshot
-                                                                          .data!
-                                                                          .docs[
-                                                                              index]
-                                                                          .get(
-                                                                              "item name"),
-                                                                      size: 40.sp,
-                                                                      color: AppColors
-                                                                          .c000000_60,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
-                                                                    ),
-                                                                    trailing:
-                                                                        SmallText(
-                                                                      text:
-                                                                          'RM ${snapshot.data!.docs[index].get("total").toStringAsFixed(2)}',
-                                                                      size: 40.sp,
-                                                                      color: AppColors
-                                                                          .c000000_60,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              });
+                                                                      child:
+                                                                          ListTile(
+                                                                        leading:
+                                                                            SmallText(
+                                                                          text:
+                                                                              '${snapshot.data!.docs[index].get("quantity")}x',
+                                                                          size:
+                                                                              40.sp,
+                                                                          color:
+                                                                              AppColors.c000000_60,
+                                                                          fontWeight:
+                                                                              FontWeight.w500,
+                                                                        ),
+                                                                        title:
+                                                                            SmallText(
+                                                                          text: snapshot
+                                                                              .data!
+                                                                              .docs[index]
+                                                                              .get("item name"),
+                                                                          size:
+                                                                              40.sp,
+                                                                          color:
+                                                                              AppColors.c000000_60,
+                                                                          fontWeight:
+                                                                              FontWeight.w500,
+                                                                        ),
+                                                                        trailing:
+                                                                            SmallText(
+                                                                          text:
+                                                                              'RM ${snapshot.data!.docs[index].get("total").toStringAsFixed(2)}',
+                                                                          size:
+                                                                              40.sp,
+                                                                          color:
+                                                                              AppColors.c000000_60,
+                                                                          fontWeight:
+                                                                              FontWeight.w500,
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  });
                                                         } else {
                                                           return Padding(
                                                             padding:
-                                                                EdgeInsets.all(8.h),
+                                                                EdgeInsets.all(
+                                                                    8.h),
                                                             child: ListTile(
                                                               title: SmallText(
                                                                 text: 'No item',
                                                                 size: 48.sp,
                                                                 fontWeight:
-                                                                    FontWeight.w500,
+                                                                    FontWeight
+                                                                        .w500,
                                                                 color: AppColors
                                                                     .c000000_100,
                                                               ),
@@ -333,9 +347,11 @@ class MyShopOrdersContent extends StatelessWidget {
                                                     Container(
                                                       height: 5.h,
                                                       width: double.maxFinite,
-                                                      margin: EdgeInsets.symmetric(
-                                                          vertical: 60.h),
-                                                      color: AppColors.c000000_25,
+                                                      margin:
+                                                          EdgeInsets.symmetric(
+                                                              vertical: 60.h),
+                                                      color:
+                                                          AppColors.c000000_25,
                                                     ),
                                                     Container(
                                                       height: 48.h,
@@ -345,8 +361,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                         title: SmallText(
                                                           text: 'Subtotal',
                                                           size: 40.sp,
-                                                          color:
-                                                              AppColors.c000000_60,
+                                                          color: AppColors
+                                                              .c000000_60,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -354,8 +370,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                           text:
                                                               'RM ${snapshot.data!.docs[index].get("Subtotal").toStringAsFixed(2)}',
                                                           size: 40.sp,
-                                                          color:
-                                                              AppColors.c000000_60,
+                                                          color: AppColors
+                                                              .c000000_60,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -369,8 +385,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                         title: SmallText(
                                                           text: 'Discount',
                                                           size: 40.sp,
-                                                          color:
-                                                              AppColors.c000000_60,
+                                                          color: AppColors
+                                                              .c000000_60,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -378,8 +394,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                           text:
                                                               'RM ${snapshot.data!.docs[index].get("discount").toStringAsFixed(2)}',
                                                           size: 40.sp,
-                                                          color:
-                                                              AppColors.c000000_60,
+                                                          color: AppColors
+                                                              .c000000_60,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -391,10 +407,11 @@ class MyShopOrdersContent extends StatelessWidget {
                                                           bottom: 10.h),
                                                       child: ListTile(
                                                         title: SmallText(
-                                                          text: 'Processing fee',
+                                                          text:
+                                                              'Processing fee',
                                                           size: 40.sp,
-                                                          color:
-                                                              AppColors.c000000_60,
+                                                          color: AppColors
+                                                              .c000000_60,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -402,8 +419,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                           text:
                                                               'RM ${snapshot.data!.docs[index].get("processingfee").toStringAsFixed(2)}',
                                                           size: 40.sp,
-                                                          color:
-                                                              AppColors.c000000_60,
+                                                          color: AppColors
+                                                              .c000000_60,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -419,8 +436,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                         SmallText(
                                                           text: 'Total',
                                                           size: 40.sp,
-                                                          color:
-                                                              AppColors.c000000_50,
+                                                          color: AppColors
+                                                              .c000000_50,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),
@@ -433,8 +450,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                           size: 48.sp,
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          color:
-                                                              AppColors.cC8151D_100,
+                                                          color: AppColors
+                                                              .cC8151D_100,
                                                         )
                                                       ],
                                                     )
@@ -459,13 +476,16 @@ class MyShopOrdersContent extends StatelessWidget {
                                                                 .instance
                                                                 .collection(
                                                                     'orders')
-                                                                .doc(snapshot.data!
+                                                                .doc(snapshot
+                                                                    .data!
                                                                     .docs[index]
                                                                     .get(
                                                                         "OrderNumber"))
-                                                                .update(
-                                                                    {'paid': true});
-                                                            Navigator.pop(context);
+                                                                .update({
+                                                              'paid': true
+                                                            });
+                                                            Navigator.pop(
+                                                                context);
                                                             done(context);
                                                           });
                                                         },
@@ -473,8 +493,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                             shape: RoundedRectangleBorder(
                                                                 borderRadius:
                                                                     BorderRadius
-                                                                        .circular(
-                                                                            20.r)),
+                                                                        .circular(20
+                                                                            .r)),
                                                             backgroundColor:
                                                                 AppColors
                                                                     .cEA2127_100),
@@ -483,8 +503,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                           size: 32.sp,
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          color:
-                                                              AppColors.cFFFFFF_100,
+                                                          color: AppColors
+                                                              .cFFFFFF_100,
                                                         )),
                                                   ),
                                                   SizedBox(
@@ -496,28 +516,27 @@ class MyShopOrdersContent extends StatelessWidget {
                                                       child: OutlinedButton(
                                                           onPressed: () {
                                                             showDialog(
-                                                                context: context,
+                                                                context:
+                                                                    context,
                                                                 builder: (BuildContext
                                                                         context) =>
                                                                     AlertDialog(
                                                                       shape: RoundedRectangleBorder(
                                                                           borderRadius:
-                                                                              BorderRadius.circular(
-                                                                                  15.r)),
+                                                                              BorderRadius.circular(15.r)),
                                                                       title: SmallText(
                                                                           text:
                                                                               'Cancel this order?',
                                                                           color: AppColors
                                                                               .cC8151D_100,
-                                                                          fontWeight:
-                                                                              FontWeight
-                                                                                  .w600,
-                                                                          textAlign:
-                                                                              TextAlign
-                                                                                  .center,
-                                                                          size: 64
-                                                                              .sp),
-                                                                      content: Row(
+                                                                          fontWeight: FontWeight
+                                                                              .w600,
+                                                                          textAlign: TextAlign
+                                                                              .center,
+                                                                          size:
+                                                                              64.sp),
+                                                                      content:
+                                                                          Row(
                                                                         children: [
                                                                           SizedBox(
                                                                             height:
@@ -545,10 +564,8 @@ class MyShopOrdersContent extends StatelessWidget {
                                                                                 30.w,
                                                                           ),
                                                                           SizedBox(
-                                                                              height: 115
-                                                                                  .h,
-                                                                              width:
-                                                                                  270.w,
+                                                                              height: 115.h,
+                                                                              width: 270.w,
                                                                               child: OutlinedButton(
                                                                                   onPressed: () {
                                                                                     Navigator.pop(context);
@@ -576,11 +593,11 @@ class MyShopOrdersContent extends StatelessWidget {
                                                                   shape:
                                                                       RoundedRectangleBorder(
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(
-                                                                                20.r),
+                                                                        BorderRadius.circular(
+                                                                            20.r),
                                                                   ),
-                                                                  side: BorderSide(
+                                                                  side:
+                                                                      BorderSide(
                                                                     width: 3.h,
                                                                     color: AppColors
                                                                         .cC8151D_100,
@@ -626,7 +643,8 @@ class MyShopOrdersContent extends StatelessWidget {
                               color: AppColors.c333333_100,
                             ),
                             SmallText(
-                              text: snapshot.data!.docs[index].get("OrderNumber"),
+                              text:
+                                  snapshot.data!.docs[index].get("OrderNumber"),
                               size: 48.sp,
                               fontWeight: FontWeight.w600,
                               color: AppColors.cC8151D_100,
@@ -670,13 +688,13 @@ class MyShopOrdersContent extends StatelessWidget {
                         ]))),
                   );
                 },
-              );
-            } else {
-              return const EmptyHairil();
-            }
-          },
-        ),
-      ],
+              ),
+            ],
+          );
+        } else {
+          return const Align(alignment: Alignment.center, child: EmptyHairil());
+        }
+      },
     );
   }
 }
