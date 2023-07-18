@@ -21,7 +21,7 @@ class MyShopSummaryContent extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 32.h),
           child: SmallText(
             text:
-                'Order For ${DateFormat('EEEE, dd / MM').format(DateTime(now.year, now.month, now.day).add(const Duration(days: 1)).toUtc())}',
+                'Order For ${DateFormat('EEEE, dd / MM').format(DateTime(now.year, now.month, now.day).add(const Duration(days: 2)).toUtc())}',
             size: 48.sp,
             color: AppColors.c000000_100,
             fontWeight: FontWeight.bold,
