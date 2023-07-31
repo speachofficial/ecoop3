@@ -26,32 +26,35 @@ class _MainProfilePageContentState extends State<MainProfilePageContent> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: EdgeInsets.only(
-            top: 32.h,
-            left: 50.h,
-            right: 50.h,
-          ),
-          child: role == 'admin'
-              ? Container(
-                  height: 92.sp,
-                )
-              : Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Icon(
-                      Icons.notifications_outlined,
-                      size: 92.sp,
-                      color: AppColors.c000000_25,
-                    ),
-                    Icon(
-                      Icons.shopping_cart_outlined,
-                      size: 92.sp,
-                      color: AppColors.c000000_25,
-                    ),
-                  ],
-                ),
+        Container(
+          height: 92.sp,
         ),
+        // Padding(
+        //   padding: EdgeInsets.only(
+        //     top: 32.h,
+        //     left: 50.h,
+        //     right: 50.h,
+        //   ),
+        //   child: role == 'admin'
+        //       ? Container(
+        //           height: 92.sp,
+        //         )
+        //       : Row(
+        //           mainAxisAlignment: MainAxisAlignment.end,
+        //           children: [
+        //             Icon(
+        //               Icons.notifications_outlined,
+        //               size: 92.sp,
+        //               color: AppColors.c000000_25,
+        //             ),
+        //             Icon(
+        //               Icons.shopping_cart_outlined,
+        //               size: 92.sp,
+        //               color: AppColors.c000000_25,
+        //             ),
+        //           ],
+        //         ),
+        // ),
         SizedBox(
           height: 138.h,
         ),

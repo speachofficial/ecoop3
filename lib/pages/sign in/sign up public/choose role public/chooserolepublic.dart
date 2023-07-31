@@ -88,51 +88,51 @@ class _MainChoosingRolePageState extends State<MainChoosingRolePage> {
                             ),
                           ),
                         ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const MainSignUpPage1(),
-                              ),
-                            );
-                            setState(() {
-                              role = 'parent';
-                            });
-                          },
-                          child: Container(
-                            padding: EdgeInsets.only(
-                                top: 32.h, left: 32.h, right: 32.h),
-                            height: 531.h,
-                            width: 531.w,
-                            decoration: BoxDecoration(
-                                color: AppColors.cA8E6CF_100,
-                                borderRadius: BorderRadius.circular(30.r),
-                                boxShadow: const [
-                                  BoxShadow(
-                                      color: AppColors.c000000_25,
-                                      offset: Offset(0.0, 4.0),
-                                      blurRadius: 25,
-                                      spreadRadius: 2)
-                                ]),
-                            child: Stack(
-                              children: [
-                                Align(
-                                    alignment: Alignment.topRight,
-                                    child: BigText(
-                                      text: 'Parent',
-                                      size: 48.sp,
-                                      color: AppColors.cFFFFFF_100,
-                                    )),
-                                Align(
-                                    alignment: Alignment.bottomLeft,
-                                    child: Image.asset(
-                                      'assets/images/parent.png',
-                                    ))
-                              ],
-                            ),
-                          ),
-                        ),
+                      //   GestureDetector(
+                      //     onTap: () {
+                      //       Navigator.push(
+                      //         context,
+                      //         MaterialPageRoute(
+                      //           builder: (context) => const MainSignUpPage1(),
+                      //         ),
+                      //       );
+                      //       setState(() {
+                      //         role = 'parent';
+                      //       });
+                      //     },
+                      //     child: Container(
+                      //       padding: EdgeInsets.only(
+                      //           top: 32.h, left: 32.h, right: 32.h),
+                      //       height: 531.h,
+                      //       width: 531.w,
+                      //       decoration: BoxDecoration(
+                      //           color: AppColors.cA8E6CF_100,
+                      //           borderRadius: BorderRadius.circular(30.r),
+                      //           boxShadow: const [
+                      //             BoxShadow(
+                      //                 color: AppColors.c000000_25,
+                      //                 offset: Offset(0.0, 4.0),
+                      //                 blurRadius: 25,
+                      //                 spreadRadius: 2)
+                      //           ]),
+                      //       child: Stack(
+                      //         children: [
+                      //           Align(
+                      //               alignment: Alignment.topRight,
+                      //               child: BigText(
+                      //                 text: 'Parent',
+                      //                 size: 48.sp,
+                      //                 color: AppColors.cFFFFFF_100,
+                      //               )),
+                      //           Align(
+                      //               alignment: Alignment.bottomLeft,
+                      //               child: Image.asset(
+                      //                 'assets/images/parent.png',
+                      //               ))
+                      //         ],
+                      //       ),
+                      //     ),
+                      //   ),
                       ],
                     ),
                   ],

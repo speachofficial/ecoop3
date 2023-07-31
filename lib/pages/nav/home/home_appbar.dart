@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../utils/colors.dart';
+import '../../../utils/my_package.dart';
 import '../../../widgets/textformfield.dart';
-import 'notifications/notifications/notifications_bg.dart';
 
 class HomePageAppBar extends StatelessWidget {
   const HomePageAppBar({super.key});
@@ -50,33 +50,35 @@ class HomePageAppBar extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                const MainNotificationsPage()));
-                  },
-                  child: Icon(
-                    Icons.notifications_outlined,
-                    size: 92.sp,
-                    color: AppColors.c000000_25,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MainCartPage()));
-                  },
-                  child: Icon(
-                    Icons.shopping_cart_outlined,
-                    size: 92.sp,
-                    color: AppColors.c000000_25,
-                  ),
-                ),
+                // GestureDetector(
+                //   onTap: () {
+                //     Navigator.push(
+                //         context,
+                //         MaterialPageRoute(
+                //             builder: (context) =>
+                //                 const MainNotificationsPage()));
+                //   },
+                //   child: Icon(
+                //     Icons.notifications_outlined,
+                //     size: 92.sp,
+                //     color: AppColors.c000000_25,
+                //   ),
+                // ),
+                role != 'admin'
+                    ? GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const MainCartPage()));
+                        },
+                        child: Icon(
+                          Icons.shopping_cart_outlined,
+                          size: 92.sp,
+                          color: AppColors.c000000_25,
+                        ),
+                      )
+                    : Container(),
               ],
             ),
           )

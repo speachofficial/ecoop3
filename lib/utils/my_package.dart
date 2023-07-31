@@ -9,7 +9,7 @@ DateTime pickuptime = DateTime(now.year, now.month, now.day + 1, 22, 0);
 DateTime today = DateTime(now.month, now.day);
 
 DateTime maxDate = now.add(const Duration(days: 6));
-DateTime minDate = now.subtract(const Duration(milliseconds: 1));
+DateTime minDate = now.add(const Duration(days: 1));
 DateTime minTime = DateTime(now.year, now.month, now.day, 8, 0);
 DateTime maxTime = DateTime(now.year, now.month, now.day, 23, 30);
 

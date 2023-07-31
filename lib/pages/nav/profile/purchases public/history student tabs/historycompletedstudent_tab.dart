@@ -84,7 +84,7 @@ class MyHistoryCompletedContent extends StatelessWidget {
                                     shrinkWrap: true,
                                     physics:
                                         const NeverScrollableScrollPhysics(),
-                                    itemCount: itemsnapshot.data!.docs.length,
+                                    itemCount: itemsnapshot.data?.docs.length ?? 0,
                                     itemBuilder: (_, index) {
                                       return Container(
                                         height: 48.h,
