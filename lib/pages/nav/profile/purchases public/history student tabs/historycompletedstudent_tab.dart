@@ -131,7 +131,7 @@ class MyHistoryCompletedContent extends StatelessWidget {
                               margin: EdgeInsets.only(bottom: 10.h),
                               child: ListTile(
                                 title: SmallText(
-                                  text: 'Subtota',
+                                  text: 'Subtotal',
                                   size: 40.sp,
                                   color: AppColors.c000000_60,
                                   fontWeight: FontWeight.w500,
