@@ -109,7 +109,7 @@ class _HomePagePromotionContentState extends State<HomePagePromotionContent> {
                                           children: [
                                             Image.asset(
                                                 'assets/images/bghomepage.png',
-                                                fit: BoxFit.cover,
+                                                fit: BoxFit.fitWidth,
                                                 width: 1620.w),
                                             Column(
                                               children: [
@@ -234,7 +234,7 @@ class _HomePagePromotionContentState extends State<HomePagePromotionContent> {
                             },
                             child: Container(
                               height: 584.h,
-                              width: 1038.w,
+                              width: 584.h/9*16,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30.r),
                                 color: Colors.transparent,
@@ -246,8 +246,8 @@ class _HomePagePromotionContentState extends State<HomePagePromotionContent> {
                                 boxShadow: const [
                                   BoxShadow(
                                       color: AppColors.c000000_25,
-                                      offset: Offset(0.0, 4.0),
-                                      blurRadius: 25,
+                                      offset: Offset(4.0, 4.0),
+                                      blurRadius: 5,
                                       spreadRadius: 1)
                                 ],
                               ),

@@ -338,7 +338,7 @@ class _HomePagePreOrderFoodsState extends State<HomePagePreOrderFoods> {
                           padding: EdgeInsets.all(13.h),
                           margin: EdgeInsets.all(16.h),
                           height: 800.h,
-                          width: 675.w,
+                          width: 800.h/800*700,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20.r),
                               image: DecorationImage(
@@ -354,7 +354,7 @@ class _HomePagePreOrderFoodsState extends State<HomePagePreOrderFoods> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                margin: EdgeInsets.all(65.w),
+                                margin: EdgeInsets.all(65.h),
                                 alignment: Alignment.topLeft,
                                 child: SmallText(
                                   text: snapshot.data!.docs[index].get("name"),
@@ -367,7 +367,7 @@ class _HomePagePreOrderFoodsState extends State<HomePagePreOrderFoods> {
                                 alignment: Alignment.bottomRight,
                                 child: Container(
                                   margin: EdgeInsets.all(32.h),
-                                  width: 313.w,
+                                  width: 100.h/100*313,
                                   height: 100.h,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(41.6),

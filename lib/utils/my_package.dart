@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
 DateTime now = DateTime.now();
-DateTime pickuptime = DateTime.now().add(const Duration(days: 1));
+DateTime pickuptime = DateTime(now.year, now.month, now.day + 1, 22, 0);
 DateTime today = DateTime(now.month, now.day);
 
 DateTime maxDate = now.add(const Duration(days: 6));
@@ -14,8 +14,6 @@ DateTime minTime = DateTime(now.year, now.month, now.day, 8, 0);
 DateTime maxTime = DateTime(now.year, now.month, now.day, 23, 30);
 
 DateTime initialTime = now.isBefore(minTime) ? minTime : minDate;
-
-DateTime newtime = DateTime.now();
 
 String paymentmethod = 'Cash';
 

@@ -19,7 +19,7 @@ class _MainAddProductPageState extends State<MainAddProductPage> {
         child: Stack(
           children: [
             Image.asset('assets/images/bghomepage.png',
-                fit: BoxFit.cover, width: 1620.w),
+                fit: BoxFit.fill, width: 1620.w),
             const MainAddProductPageContent()
           ],
         ),

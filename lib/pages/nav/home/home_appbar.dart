@@ -16,7 +16,7 @@ class HomePageAppBar extends StatelessWidget {
       decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage('assets/images/bgappbar.png'),
-              fit: BoxFit.cover)),
+              fit: BoxFit.fill)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -30,14 +30,17 @@ class HomePageAppBar extends StatelessWidget {
           ),
           Expanded(
             flex: 900,
-            child: MyTextFormField(
-              enabled: false,
-              text: null,
-              controller: TextEditingController(),
-              suffixIcon: Icon(
-                Icons.search_rounded,
-                color: AppColors.c000000_25,
-                size: 55.sp,
+            child: SizedBox(
+              height: 100.h,
+              child: MyTextFormField(
+                enabled: false,
+                text: null,
+                controller: TextEditingController(),
+                suffixIcon: Icon(
+                  Icons.search_rounded,
+                  color: AppColors.c000000_25,
+                  size: 55.sp,
+                ),
               ),
             ),
           ),

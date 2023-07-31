@@ -7,7 +7,7 @@ import '../../../../widgets/arrowback.dart';
 import '../../../../widgets/bigtext.dart';
 import '../../../../widgets/elevatedbutton.dart';
 import '../../../../widgets/smalltext.dart';
-import '../../../sign in/sign in /signin_body.dart';
+import '../../../sign in/sign in /signin_bg.dart';
 import 'account and security/accountandsecurity_bg.dart';
 import 'bank account and cards/bankaccountandcards_bg.dart';
 import 'chat settings/chatsettings_bg.dart';

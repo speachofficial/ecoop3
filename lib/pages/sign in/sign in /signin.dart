@@ -5,7 +5,7 @@ import '../../../utils/colors.dart';
 import '../../../widgets/bigtext.dart';
 import '../../../widgets/smalltext.dart';
 import '../onboarding public/onbordingpublic_bg.dart';
-import 'signin_bg.dart';
+import 'signin_body.dart';
 
 class MainSignInPageContent extends StatefulWidget {
   const MainSignInPageContent({super.key});

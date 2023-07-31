@@ -102,9 +102,9 @@ class _PlaceABidState extends State<PlaceABid> {
                             maximumDate: maxDate,
                             initialDateTime: pickuptime,
                             onDateTimeChanged: (DateTime newTime) {
-                              setState(() {
-                                newtime = newTime;
-                              });
+                              // setState(() {
+                              //   newtime = newTime;
+                              // });
                             }),
                       ),
                     ),

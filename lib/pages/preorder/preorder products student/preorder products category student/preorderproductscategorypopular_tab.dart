@@ -265,7 +265,7 @@ class _PopularContentState extends State<PopularContent> {
                             });
                       },
                       child: Container(
-                        padding: EdgeInsets.all(13.h),
+                        padding: EdgeInsets.all(13.w),
                         height: 800.h,
                         width: 675.w,
                         decoration: BoxDecoration(

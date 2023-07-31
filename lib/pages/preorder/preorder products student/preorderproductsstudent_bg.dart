@@ -20,7 +20,7 @@ class _MainFoodsPageState extends State<MainFoodsPage> {
         child: Stack(
           children: [
             Image.asset('assets/images/bghomepage.png',
-                fit: BoxFit.cover, width: 1620.w),
+                fit: BoxFit.fill, width: 1620.w),
             const MainFoodsPageContent()
           ],
         ),

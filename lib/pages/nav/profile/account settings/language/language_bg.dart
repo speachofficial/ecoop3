@@ -14,7 +14,7 @@ class MainLanguagePage extends StatelessWidget {
         child: Stack(
           children: [
             Image.asset('assets/images/bghomepage.png',
-                fit: BoxFit.cover, width: 1620.w),
+                fit: BoxFit.fill, width: 1620.w),
             const MainLanguagePageContent()
           ],
         ),
