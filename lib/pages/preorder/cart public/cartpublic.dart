@@ -125,14 +125,32 @@ class _MainCartPageContentState extends State<MainCartPageContent> {
                                             newDate.day,
                                             newtime.hour,
                                             newtime.minute);
-                                        if (newTime.day - now.day >= 1) {
-                                          newTime = DateTime(newTime.year,
-                                              newTime.month, newTime.day);
+                                        if (newTime.day - now.day >= 1 &&
+                                            newTime.hour < 22) {
+                                          newTime = DateTime(
+                                              newTime.year,
+                                              newTime.month,
+                                              newTime.day,
+                                              22,
+                                              0);
                                         }
-                                        if (newTime.hour < 22) {
-                                          newTime = DateTime(newTime.year,
-                                              newTime.month, newTime.day, 22, 0);
+                                        if (newTime.day - now.day >= 1 &&
+                                            newTime.hour > 23) {
+                                          newTime = DateTime(
+                                              newTime.year,
+                                              newTime.month,
+                                              newTime.day,
+                                              22,
+                                              0);
                                         }
+                                        // if (newTime.day - now.day >= 1  ) {
+                                        //   newTime = DateTime(newTime.year,
+                                        //       newTime.month, newTime.day);
+                                        // }
+                                        // if (newTime.hour < 22 ) {
+                                        //   newTime = DateTime(newTime.year,
+                                        //       newTime.month, newTime.day, 22, 0);
+                                        // }
                                         if (newTime.weekday ==
                                                 DateTime.saturday ||
                                             newTime.weekday ==

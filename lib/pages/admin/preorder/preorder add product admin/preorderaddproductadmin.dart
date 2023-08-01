@@ -38,7 +38,7 @@ class _MainAddProductPageContentState extends State<MainAddProductPageContent> {
     });
   }
 
-  Future<void> addProductFunctionadmin() async {
+  Future<void> uploadtofirebaseadmin() async {
     final file = File(image!.path);
     TaskSnapshot snapshot = await FirebaseStorage.instance
         .ref()
@@ -60,7 +60,7 @@ class _MainAddProductPageContentState extends State<MainAddProductPageContent> {
     Navigator.pop(context);
   }
 
-  Future<void> addProductFunctionparent() async {
+  Future<void> uploadtofirebaseparent() async {
     final file = File(image!.path);
     TaskSnapshot snapshot = await FirebaseStorage.instance
         .ref()
@@ -107,19 +107,19 @@ class _MainAddProductPageContentState extends State<MainAddProductPageContent> {
                       ],
                     ),
                   ),
-                  ElevatedButton(
-                    //if user click this button. user can upload image from camera
-                    onPressed: () {
-                      Navigator.pop(context);
-                      getImage(ImageSource.camera);
-                    },
-                    child: const Row(
-                      children: [
-                        Icon(Icons.camera),
-                        Text('From Camera'),
-                      ],
-                    ),
-                  ),
+                  // ElevatedButton(
+                  //   //if user click this button. user can upload image from camera
+                  //   onPressed: () {
+                  //     Navigator.pop(context);
+                  //     getImage(ImageSource.camera);
+                  //   },
+                  //   child: const Row(
+                  //     children: [
+                  //       Icon(Icons.camera),
+                  //       Text('From Camera'),
+                  //     ],
+                  //   ),
+                  // ),
                 ],
               ),
             ),
@@ -384,8 +384,8 @@ class _MainAddProductPageContentState extends State<MainAddProductPageContent> {
                       if (addproductkey.currentState!.validate()) {
                         if (image != null) {
                           role == 'admin'
-                              ? addProductFunctionadmin()
-                              : addProductFunctionparent();
+                              ? uploadtofirebaseadmin()
+                              : uploadtofirebaseadmin();
                           done(context);
                         } else {
                           showDialog(

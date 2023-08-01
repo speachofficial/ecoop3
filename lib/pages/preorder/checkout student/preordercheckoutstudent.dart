@@ -110,11 +110,8 @@ class _MainCheckoutPageContentState extends State<MainCheckoutPageContent> {
                           } else {
                             var newTime = DateTime(newDate.year, newDate.month,
                                 newDate.day, newtime.hour, newtime.minute);
-                            if (newTime.day - now.day >= 1) {
-                              newTime = DateTime(
-                                  newTime.year, newTime.month, newTime.day);
-                            }
-                            if (newTime.hour < 22) {
+                            if (newTime.day - now.day >= 1 &&
+                                newTime.hour < 22) {
                               newTime = DateTime(newTime.year, newTime.month,
                                   newTime.day, 22, 0);
                             }

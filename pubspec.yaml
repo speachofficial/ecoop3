@@ -47,6 +47,8 @@ dependencies:
   url_launcher: ^6.1.11
   flutter_launcher_icons: ^0.13.1
   flutter_screenutil: ^5.8.4
+  flutter_web_frame: ^1.0.0
+  file_picker: ^5.3.3
 
 dev_dependencies:
   flutter_test:
